@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 // import telegram from "../../public/telegram.svg";
 import axios from "axios";
@@ -13,7 +13,7 @@ const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const {darkMode} = useMyStore()
+  const { darkMode } = useMyStore();
 
   useEffect(() => {
     const fetchUpdates = async () => {
@@ -32,17 +32,17 @@ const Contact: React.FC = () => {
   }, []);
   const sendMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     const telegramMessage = `
       📩 Yangi xabar!
       👤 Ism: ${name}
       📧 Email: ${email}
       📝 Xabar: ${message}
     `;
-  
+
     const TELEGRAM_BOT_TOKEN = "7090107076:AAEkcNnLmcCP_zjbh03bet9ZmG4sxpDDiyE";
     const TELEGRAM_CHAT_ID = "2124944409"; // CHAT ID ni to‘ldir
-  
+
     try {
       await axios.post(
         `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
@@ -51,10 +51,9 @@ const Contact: React.FC = () => {
           text: telegramMessage,
         }
       );
-      toast.success('This is a success message!');
+      toast.success("This is a success message!");
 
-
-      setName("");  
+      setName("");
       setEmail("");
       setMessage("");
     } catch (error) {
@@ -62,12 +61,21 @@ const Contact: React.FC = () => {
       toast.error("Xabar yuborilmadi ❌");
     }
   };
-  
+
   return (
-    <section id="contact" className={`py-20  ${darkMode?'bg-gray-900': 'text-white'} `}>
+    <section
+      id="contact"
+      className={`py-20  ${darkMode ? "bg-gray-900" : "text-white"} `}
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4  ${!darkMode?'text-gray-800': 'text-white'}`}>Contact</h2>
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-4  ${
+              !darkMode ? "text-gray-800" : "text-white"
+            }`}
+          >
+            Contact
+          </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Feel free to reach out for collaborations, opportunities, or just to
             say hello!
@@ -79,13 +87,13 @@ const Contact: React.FC = () => {
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 
             <div className="space-y-6">
-              <div className="flex items-start animate-fadeIn animate-delay-100">
+              <div className="flex items-center  animate-fadeIn animate-delay-100">
                 <Mail
                   size={20}
                   className="text-blue-600 dark:text-blue-400 mt-1 mr-4"
                 />
                 <div>
-                  <p className="font-medium">Email</p>
+                  <p className={`font-medium text-black `}>Email</p>
                   <a
                     href="mailto:ozodbek@example.com"
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -95,13 +103,13 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start animate-fadeIn animate-delay-200">
+              <div className="flex items-center animate-fadeIn animate-delay-200">
                 <Phone
                   size={20}
                   className="text-blue-600 dark:text-blue-400 mt-1 mr-4"
                 />
                 <div>
-                  <p className="font-medium">Phone</p>
+                  <p className="font-medium text-black ">Phone</p>
                   <a
                     href="tel:+998950352200"
                     className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
@@ -111,23 +119,19 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-
-
-              <div className="flex items-start animate-fadeIn animate-delay-300">
+              <div className="flex items-center animate-fadeIn animate-delay-300">
                 <MapPin
                   size={20}
                   className="text-blue-600 dark:text-blue-400 mt-1 mr-4"
                 />
                 <div>
-                  <p className="font-medium">Location</p>
+                  <p className="font-medium text-black ">Location</p>
                   <p className="text-gray-600 dark:text-gray-400">
                     Tashkent, Uzbekistan
                   </p>
                 </div>
               </div>
             </div>
-
-          
           </div>
 
           <div className="bg-white  rounded-xl shadow-md p-8 animate-slideInRight">
@@ -165,8 +169,6 @@ const Contact: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-
-
 
               <div className="animate-fadeIn animate-delay-300">
                 <label
