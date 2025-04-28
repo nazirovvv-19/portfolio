@@ -137,7 +137,7 @@ const Contact: React.FC = () => {
               <div className="animate-fadeIn animate-delay-100">
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-sm font-medium text-gray-700 mb-1"
                 >
                   Name
                 </label>
@@ -161,7 +161,7 @@ const Contact: React.FC = () => {
 
                 <input
                   value={email}
-                  className="w-full p-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full p-3 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -171,14 +171,14 @@ const Contact: React.FC = () => {
               <div className="animate-fadeIn animate-delay-300">
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-sm font-medium text-gray-700  mb-1"
                 >
                   Message
                 </label>
 
                 <textarea
                   value={message}
-                  className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full p-3 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
