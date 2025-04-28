@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import nazirov from "../../../../public/Nazirov.jpg";
+import useMyStore from "@/store/store";
 
 const AboutPage = () => {
+  const { darkMode } = useMyStore();
   const technologies = [
     "HTML",
     "CSS",
@@ -19,19 +21,24 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-gray-100 dark:from-gray-800 dark:to-gray-900">
+    <div
+      className={`min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br  ${
+        darkMode ? "bg-gray-900" : "bg-white"
+      } mt-10 `}
+    >
       <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
+          <h1
+            className={`text-4xl md:text-5xl font-bold   ${
+              !darkMode ? "text-gray-800" : "text-white"
+            } mb-4`}
+          >
             About <span className="text-blue-600 dark:text-blue-400">Me</span>
           </h1>
           <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
         </div>
 
-        {/* Content Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image Section */}
           <div className="flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
               <Image
@@ -44,20 +51,16 @@ const AboutPage = () => {
             </div>
           </div>
 
-          {/* Text Section */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white">
+            <h2 className={`text-3xl font-bold  ${!darkMode?'text-gray-800': 'text-white'} `}>
               Nazirov Ozodbek
             </h2>
 
-       
-
             <div>
-             
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                I need to update this. I started my studies at Najot Talim in
-                August 2024 and will finish in May 2025. I am currently working
-                on projects at Najot Talim.
+                I started my studies at Najot Talim in August 2024 and will
+                finish in May 2025. I am currently working on projects at Najot
+                Talim.
               </p>
             </div>
 

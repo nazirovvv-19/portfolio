@@ -5,6 +5,7 @@ import Image from "next/image";
 // import telegram from "../../public/telegram.svg";
 import axios from "axios";
 import { toast } from "sonner";
+import useMyStore from "@/store/store";
 
 const Contact: React.FC = () => {
   const [telegramPush, setTelegramPush] = useState();
@@ -12,6 +13,7 @@ const Contact: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const {darkMode} = useMyStore()
 
   useEffect(() => {
     const fetchUpdates = async () => {
@@ -62,10 +64,10 @@ const Contact: React.FC = () => {
   };
   
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800/50">
+    <section id="contact" className={`py-20  ${darkMode?'bg-gray-900': 'text-white'} `}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Contact</h2>
+          <h2 className={`text-3xl md:text-4xl font-bold mb-4  ${!darkMode?'text-gray-800': 'text-white'}`}>Contact</h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Feel free to reach out for collaborations, opportunities, or just to
             say hello!
@@ -73,7 +75,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-8 animate-slideInLeft">
+          <div className="bg-white  rounded-xl shadow-md p-8 animate-slideInLeft">
             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
 
             <div className="space-y-6">

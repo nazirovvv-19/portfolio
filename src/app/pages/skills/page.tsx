@@ -20,8 +20,8 @@ function Skills() {
   const { darkMode } = useMyStore();
 
   return (
-    <div className={`py-12 px-4 sm:px-6 lg:px-10 transition-colors duration-500 ${darkMode ? "bg-[#080e3a]" : "bg-white"}`}>
-      <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+    <div className={`py-12 px-4 sm:px-6 lg:px-10 transition-colors duration-500 ${darkMode ? "bg-gray-900" : "bg-white"} mt-10 h-screen`}>
+      <h2 className={`text-3xl font-bold text-center mb-12  ${!darkMode?'text-gray-800': 'text-white'}`}>
         My Skills
       </h2>
 
@@ -29,7 +29,7 @@ function Skills() {
         {skills.map((skill, index) => (
           <div key={index} className="relative group flex flex-col items-center">
          
-            <div className="w-36 h-24 sm:w-40 sm:h-28 md:w-52 md:h-28 relative rounded-xl bg-white dark:bg-gray-800 p-4 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:scale-100">
+            <div className="w-36 h-24 sm:w-40 sm:h-28 md:w-52 md:h-28 relative rounded-xl bg-white p-4 shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:scale-100">
               <Image
                 src={skill.image}
                 alt={skill.name}

@@ -12,7 +12,6 @@ function Footer() {
         <div className='flex gap-5 items-center'>
             <Image src={insta} alt='insta' width={30} height={30}/>
             <Image src={github} alt='insta' width={30} height={30}/>
-            {/* <Image src={linkedin} alt='insta' width={30} height={30}/> */}
         </div>
     </div>
   )

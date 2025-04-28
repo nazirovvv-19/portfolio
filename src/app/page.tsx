@@ -1,15 +1,16 @@
 "use client";
 import Image from "next/image";
 import nazirov from "../../public/Nazirov.jpg";
+import useMyStore from "@/store/store";
 
 export default function HomePage() {
+  const {darkMode}= useMyStore()
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-4">
+    <div className={`min-h-screen flex items-center justify-center bg-gradient-to-br ${darkMode?'bg-gray-900':'bg-white'} p-4`}>
       <div className="max-w-4xl w-full grid md:grid-cols-2 gap-12 items-center">
-        {/* Left Column - Text Content */}
         <div className="space-y-6">
           <h1
-            className="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4 animate-fadeInUp"
+            className={`text-5xl md:text-6xl font-bold ${!darkMode?'text-gray-800': 'text-white'} dark:text-white mb-4 animate-fadeInUp`}
             style={{ animationDelay: "0.1s" }}
           >
             Nazirov{" "}
@@ -38,7 +39,7 @@ export default function HomePage() {
           </button>
           <button
             style={{ animationDelay: "0.4s" }}
-            className="ml-2 transition-all duration-300 hover: animate-fadeInUp"
+            className={`ml-2 transition-all duration-300  ${!darkMode?'text-gray-800': 'text-white'} hover: animate-fadeInUp`}
           >
             Here is my{" "}
             <a href="file:///C:/Users/user/Desktop/Resume.pdf" className="resume-link text-blue-500 ml-2">
@@ -47,7 +48,6 @@ export default function HomePage() {
           </button>
         </div>
 
-        {/* Right Column - Image */}
         <div className="flex justify-center">
           <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl animate-scaleIn">
             <Image
@@ -61,7 +61,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* CSS Animations */}
       <style jsx global>{`
         @keyframes fadeInUp {
           from {
