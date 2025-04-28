@@ -130,7 +130,7 @@ const Contact: React.FC = () => {
           
           </div>
 
-          <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md p-8 animate-slideInRight">
+          <div className="bg-white  rounded-xl shadow-md p-8 animate-slideInRight">
             <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
 
             <form className="space-y-4" onSubmit={sendMessage}>
@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
                 <input
                   type="text"
                   id="name"
-                  className="w-full p-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -178,7 +178,7 @@ const Contact: React.FC = () => {
 
                 <textarea
                   value={message}
-                  className="w-full p-3 border border-gray-300 dark:border-gray-700 dark:bg-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
