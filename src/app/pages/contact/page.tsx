@@ -154,7 +154,7 @@ const Contact: React.FC = () => {
               <div className="animate-fadeIn animate-delay-200">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  className="block text-sm font-medium text-gray-700  mb-1"
                 >
                   Email
                 </label>
