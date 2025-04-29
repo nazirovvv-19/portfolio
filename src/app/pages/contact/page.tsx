@@ -149,7 +149,7 @@ const Contact: React.FC = () => {
                 <input
                   type="text"
                   id="name"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full p-3 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
 
                 <input
                   value={email}
-                  className="w-full p-3 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                  className="w-full p-3 border border-gray-300 text-black  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -180,7 +180,7 @@ const Contact: React.FC = () => {
 
                 <textarea
                   value={message}
-                  className="w-full p-3 border border-gray-300  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full p-3 border border-gray-300  text-black rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
