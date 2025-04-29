@@ -84,7 +84,7 @@ const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div className="bg-white  rounded-xl shadow-md p-8 animate-slideInLeft">
-            <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+            <h3 className="text-2xl font-bold mb-6 text-gray-800" >Contact Information</h3>
 
             <div className="space-y-6">
               <div className="flex items-center  animate-fadeIn animate-delay-100">
@@ -135,7 +135,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="bg-white  rounded-xl shadow-md p-8 animate-slideInRight">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+            <h3 className={`text-2xl font-bold mb-6 text-gray-800`}>Send a Message</h3>
 
             <form className="space-y-4" onSubmit={sendMessage}>
               <div className="animate-fadeIn animate-delay-100">
