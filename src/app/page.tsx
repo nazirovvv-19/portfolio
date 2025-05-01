@@ -2,6 +2,7 @@
 import Image from "next/image";
 import nazirov from "../../public/Nazirov.jpg";
 import useMyStore from "@/store/store";
+import Link from "next/link";
 
 export default function HomePage() {
   const {darkMode}= useMyStore()
@@ -30,21 +31,21 @@ export default function HomePage() {
           >
             Learning modern programming languages and enhancing experience
           </p>
-
+          <Link href={'/pages/contact'}>
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl animate-fadeInUp"
             style={{ animationDelay: "0.4s" }}
           >
             Contact Me
-          </button>
+          </button></Link>
           <button
             style={{ animationDelay: "0.4s" }}
             className={`ml-2 transition-all duration-300  ${!darkMode?'text-gray-800': 'text-white'} hover: animate-fadeInUp`}
           >
             Here is my{" "}
-            <a href="file:///C:/Users/user/Desktop/Resume.pdf" className="resume-link text-blue-500 ml-2">
+            <Link href="/resume.pdf" className="resume-link text-blue-500 ml-2">
               resume
-            </a>
+            </Link>
           </button>
         </div>
 
